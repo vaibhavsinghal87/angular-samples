@@ -1,0 +1,58 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/enterprise-shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/enterprise-shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./enterprise/tsconfig.app.json"
+    },
+    {
+      "path": "./enterprise/tsconfig.spec.json"
+    },
+    {
+      "path": "./enterprise/enterprise-shell/tsconfig.app.json"
+    },
+    {
+      "path": "./enterprise/enterprise-shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./digital/digital-shell/tsconfig.app.json"
+    },
+    {
+      "path": "./digital/digital-shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./platform/platform-shell/tsconfig.app.json"
+    },
+    {
+      "path": "./platform/platform-shell/tsconfig.spec.json"
+    }
+  ]
+}
