@@ -6,7 +6,7 @@ export const routes: Routes = [
         path: 'digital',
         loadComponent: () => loadRemoteModule({
             type: 'module',
-            remoteEntry: 'http://localhost:4201/remoteEntry.js',
+            remoteEntry: '/digital/remoteEntry.js',
             exposedModule: './DigitalApp'
         }).then(m => m.App)
     },
@@ -14,7 +14,7 @@ export const routes: Routes = [
         path: 'platform',
         loadComponent: () => loadRemoteModule({
             type: 'module',
-            remoteEntry: 'http://localhost:4202/remoteEntry.js',
+            remoteEntry: '/platform/remoteEntry.js',
             exposedModule: './PlatformApp'
         }).then(m => m.App)
     },

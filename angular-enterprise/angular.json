@@ -65,7 +65,8 @@
 					"options": {
 						"port": 4200,
 						"publicHost": "http://localhost:4200",
-						"extraWebpackConfig": "enterprise/enterprise-shell/webpack.config.js"
+						"extraWebpackConfig": "enterprise/enterprise-shell/webpack.config.js",
+						"proxyConfig": "./proxy.conf.js"
 					},
 					"configurations": {
 						"production": {
@@ -161,7 +162,8 @@
 					"options": {
 						"port": 4201,
 						"publicHost": "http://localhost:4201",
-						"extraWebpackConfig": "digital/digital-shell/webpack.config.js"
+						"extraWebpackConfig": "digital/digital-shell/webpack.config.js",
+						"proxyConfig": "./proxy.conf.js"
 					},
 					"configurations": {
 						"production": {
@@ -257,7 +259,8 @@
 					"options": {
 						"port": 4202,
 						"publicHost": "http://localhost:4202",
-						"extraWebpackConfig": "platform/platform-shell/webpack.config.js"
+						"extraWebpackConfig": "platform/platform-shell/webpack.config.js",
+						"proxyConfig": "./proxy.conf.js"
 					},
 					"configurations": {
 						"production": {
