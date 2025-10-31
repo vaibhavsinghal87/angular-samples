@@ -57,3 +57,55 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## TODO
+
+- share angular packages
+- create bundles with name
+- use material for styling
+- configure sonar locally
+- cross app navigation
+- load routes rather than standalone components
+- prettier, stylelintrc, eslintrc, githooks, run code on pre/post build hooks
+- angular library, secondary entry points
+- profiling
+- treeshakeable library and code
+- esm vs non-esm
+- enforce coding practices using eslint, sonar, explore more such useful plugins for development
+- native federation
+- vite/esbuild, build time
+- explore signals
+- integrate patterns in application
+- dynamic import/import maps
+- create app/patterns for performance
+- web workers
+- integrate scss compilation
+- integrate design tokens
+- explore new angular features
+- routerlink and router module
+- passing of params in history
+- add loader to microapps, add some initial api calls in app initializer
+- explore injection token
+- angular runtime performace
+- explore function in html perf impact
+- ng::deep
+- allow commonjsdependencies in angular
+- use javascript package in angular - create directive for same
+- use non esm in angular
+- use ag grid, tree shaking package, understand how bundling is done
+- prerendering, preloading techniques
+- deferred loading
+- explore perf improvements in angular
+- use svg images, svg creation, use webfont, web-font-generaor
+- CSS usage - @use
+- how to write effective CSS, explore CSS bundles?
+- Modern CSS - defer rendering of html until present in viewport, CSS concepts, critical CSS inlining
+- viewport @include utils, mixins
+- web vitals, lighthouse, web performance
+- explore modern js features
+- modern web
+- add mock-server to project. explore mock servers and capabilities
+- explore nodejs/mongodb
+- analog js, explore other angular plugins and ecosystem
+- create custom decorator for custom use case
+- postcss
