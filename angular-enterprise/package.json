@@ -8,8 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "enterprise-shell:start": "ng serve enterprise-shell",
+    "enterprise-shell:build": "ng build enterprise-shell",
     "digital-shell:start": "ng serve digital-shell",
-    "platform-shell:start": "ng serve platform-shell"
+    "digital-shell:build": "ng build digital-shell",
+    "platform-shell:start": "ng serve platform-shell",
+    "platform-shell:build": "ng build platform-shell",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "prettier": {
     "printWidth": 100,
@@ -25,6 +29,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^20.0.0",
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",
     "@angular/core": "^20.3.0",
@@ -35,6 +40,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^20.3.8",
     "@angular/build": "^20.3.8",
     "@angular/cli": "^20.3.8",
     "@angular/compiler-cli": "^20.3.0",
@@ -45,6 +51,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ngx-build-plus": "^20.0.0",
     "typescript": "~5.9.2"
   }
 }
