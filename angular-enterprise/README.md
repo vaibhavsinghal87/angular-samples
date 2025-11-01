@@ -109,3 +109,6 @@ For more information on using the Angular CLI, including detailed command refere
 - analog js, explore other angular plugins and ecosystem
 - create custom decorator for custom use case
 - postcss
+- add material and create a navbar for shell apps
+- npm publish, symlinking
+- try vite as development server and explore prebundling capabilities

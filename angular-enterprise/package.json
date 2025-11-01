@@ -3,17 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "mock-server": "node mock-server/server.js",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "enterprise-shell:start": "ng serve enterprise-shell",
     "enterprise-shell:build": "ng build enterprise-shell",
     "digital-shell:start": "ng serve digital-shell",
     "digital-shell:build": "ng build digital-shell",
     "platform-shell:start": "ng serve platform-shell",
     "platform-shell:build": "ng build platform-shell",
+    "core:build": "ng build core-ui",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
@@ -41,6 +38,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.3.0",
     "ngx-build-plus": "^20.0.0",
     "prettier": "^3.6.2",
     "typescript": "~5.9.2"

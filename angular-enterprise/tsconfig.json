@@ -1,6 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@core-ui": [
+        "./dist/core-ui"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -23,18 +28,6 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/enterprise-shell/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/enterprise-shell/tsconfig.spec.json"
-    },
-    {
-      "path": "./enterprise/tsconfig.app.json"
-    },
-    {
-      "path": "./enterprise/tsconfig.spec.json"
-    },
-    {
       "path": "./enterprise/enterprise-shell/tsconfig.app.json"
     },
     {
@@ -51,6 +44,12 @@
     },
     {
       "path": "./platform/platform-shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./core-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./core-ui/tsconfig.spec.json"
     }
   ]
 }
