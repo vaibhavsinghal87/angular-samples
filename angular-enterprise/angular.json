@@ -28,6 +28,9 @@
               }
             ],
             "styles": ["enterprise/enterprise-shell/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["dist/core-ui/scss"]
+            },
             "main": "enterprise/enterprise-shell/src/main.ts",
             "index": "enterprise\\enterprise-shell\\src\\index.html",
             "extraWebpackConfig": "enterprise/enterprise-shell/webpack.config.js",

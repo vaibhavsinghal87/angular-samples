@@ -3,5 +3,6 @@
   "dest": "../dist/core-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [{ "input": "scss", "glob": "**/*.scss", "output": "scss" }]
 }
