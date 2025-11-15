@@ -4,14 +4,20 @@
   "scripts": {
     "ng": "ng",
     "mock-server": "node mock-server/server.js",
+    "lint": "eslint \"**/*.{js,ts}\" --fix",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write \"**/*.{js,ts,html,scss}\"",
     "enterprise-shell:start": "ng serve enterprise-shell",
     "enterprise-shell:build": "ng build enterprise-shell",
+    "enterprise-shell:lint": "ng lint enterprise-shell",
     "digital-shell:start": "ng serve digital-shell",
     "digital-shell:build": "ng build digital-shell",
+    "digital-shell:lint": "ng lint digital-shell",
     "platform-shell:start": "ng serve platform-shell",
     "platform-shell:build": "ng build platform-shell",
-    "core:build": "ng build core-ui",
-    "theme:build": "sass ./core-ui/scss/theme.scss ./dist/core-ui/scss/theme.css",
+    "platform-shell:lint": "ng lint platform-shell",
+    "core-ui:build": "ng build core-ui",
+    "core-ui:lint": "ng lint core-ui",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
@@ -33,7 +39,16 @@
     "@angular/build": "^20.3.8",
     "@angular/cli": "^20.3.8",
     "@angular/compiler-cli": "^20.3.0",
+    "@eslint/js": "^9.39.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "20.5.0",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-sonarjs": "^3.0.5",
+    "globals": "^16.5.0",
     "jasmine-core": "~5.9.0",
     "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
@@ -44,6 +59,7 @@
     "ng-packagr": "^20.3.0",
     "ngx-build-plus": "^20.0.0",
     "prettier": "^3.6.2",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "8.46.1"
   }
 }

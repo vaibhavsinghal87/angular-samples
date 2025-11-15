@@ -27,9 +27,13 @@
                 "output": "."
               }
             ],
-            "styles": ["enterprise/enterprise-shell/src/styles.scss"],
+            "styles": [
+              "enterprise/enterprise-shell/src/styles.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["dist/core-ui/scss"]
+              "includePaths": [
+                "dist/core-ui/scss"
+              ]
             },
             "main": "enterprise/enterprise-shell/src/main.ts",
             "index": "enterprise\\enterprise-shell\\src\\index.html",
@@ -94,7 +98,19 @@
                 "input": "enterprise/enterprise-shell/public"
               }
             ],
-            "styles": ["enterprise/enterprise-shell/src/styles.scss"]
+            "styles": [
+              "enterprise/enterprise-shell/src/styles.scss"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "enterprise/enterprise-shell/**/*.ts",
+              "enterprise/enterprise-shell/**/*.html"
+            ],
+            "eslintConfig": "enterprise/enterprise-shell/eslint.config.js"
           }
         }
       }
@@ -123,7 +139,9 @@
                 "output": "."
               }
             ],
-            "styles": ["digital/digital-shell/src/styles.scss"],
+            "styles": [
+              "digital/digital-shell/src/styles.scss"
+            ],
             "main": "digital/digital-shell/src/main.ts",
             "index": "digital\\digital-shell\\src\\index.html",
             "extraWebpackConfig": "digital/digital-shell/webpack.config.js",
@@ -187,7 +205,19 @@
                 "input": "digital/digital-shell/public"
               }
             ],
-            "styles": ["digital/digital-shell/src/styles.scss"]
+            "styles": [
+              "digital/digital-shell/src/styles.scss"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "digital/digital-shell/**/*.ts",
+              "digital/digital-shell/**/*.html"
+            ],
+            "eslintConfig": "digital/digital-shell/eslint.config.js"
           }
         }
       }
@@ -216,7 +246,9 @@
                 "output": "."
               }
             ],
-            "styles": ["platform/platform-shell/src/styles.scss"],
+            "styles": [
+              "platform/platform-shell/src/styles.scss"
+            ],
             "main": "platform/platform-shell/src/main.ts",
             "index": "platform\\platform-shell\\src\\index.html",
             "extraWebpackConfig": "platform/platform-shell/webpack.config.js",
@@ -280,7 +312,19 @@
                 "input": "platform/platform-shell/public"
               }
             ],
-            "styles": ["platform/platform-shell/src/styles.scss"]
+            "styles": [
+              "platform/platform-shell/src/styles.scss"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "platform/platform-shell/**/*.ts",
+              "platform/platform-shell/**/*.html"
+            ],
+            "eslintConfig": "platform/platform-shell/eslint.config.js"
           }
         }
       }
@@ -307,6 +351,16 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "core-ui/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "core-ui/**/*.ts",
+              "core-ui/**/*.html"
+            ],
+            "eslintConfig": "core-ui/eslint.config.mjs"
           }
         }
       }

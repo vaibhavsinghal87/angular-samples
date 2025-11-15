@@ -112,3 +112,4 @@ For more information on using the Angular CLI, including detailed command refere
 - add material and create a navbar for shell apps
 - npm publish, symlinking
 - try vite as development server and explore prebundling capabilities
+- hook into anguar build process, execute nodejs code
