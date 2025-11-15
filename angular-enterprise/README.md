@@ -113,3 +113,6 @@ For more information on using the Angular CLI, including detailed command refere
 - npm publish, symlinking
 - try vite as development server and explore prebundling capabilities
 - hook into anguar build process, execute nodejs code
+- ways of creating MFEs using angular, Nextjs, react
+- firebase integration
+- integrate CMS

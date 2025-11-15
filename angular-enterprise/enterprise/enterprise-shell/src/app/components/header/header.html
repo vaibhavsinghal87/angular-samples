@@ -1,0 +1,9 @@
+<div class="header-container">
+  <div class="navbar">
+    <mat-nav-list>
+      @for (link of navConfig; track link) {
+      <a mat-list-item [routerLink]="link.path">{{ link.label }}</a>
+      }
+    </mat-nav-list>
+  </div>
+</div>
