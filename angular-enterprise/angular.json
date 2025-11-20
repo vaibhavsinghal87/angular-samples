@@ -124,7 +124,7 @@
       },
       "root": "digital/digital-shell",
       "sourceRoot": "digital/digital-shell/src",
-      "prefix": "app",
+      "prefix": "app-digital",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
@@ -231,7 +231,7 @@
       },
       "root": "platform/platform-shell",
       "sourceRoot": "platform/platform-shell/src",
-      "prefix": "app",
+      "prefix": "app-platform",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",

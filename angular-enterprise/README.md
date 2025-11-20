@@ -116,3 +116,6 @@ For more information on using the Angular CLI, including detailed command refere
 - ways of creating MFEs using angular, Nextjs, react
 - firebase integration
 - integrate CMS
+
+- platform app.ts doesn;t have routes info, so unable to rediret to dashboard
+- error in console on refresh
