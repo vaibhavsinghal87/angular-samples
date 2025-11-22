@@ -360,7 +360,7 @@
               "core-ui/**/*.ts",
               "core-ui/**/*.html"
             ],
-            "eslintConfig": "core-ui/eslint.config.mjs"
+            "eslintConfig": "core-ui/eslint.config.js"
           }
         }
       }

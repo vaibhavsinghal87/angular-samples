@@ -128,3 +128,14 @@ For more information on using the Angular CLI, including detailed command refere
 - run in container setup in local
 - .angular/cache
 - httpinterceptor - xsrf
+- create node utils for comparing files and other stuff
+- firebase
+- sort imports - angular, core lib, other components/pipes/directives/servies together, group import
+- stylelint
+- api endpoint/app initializer setup
+- fix eslint error on running linting
+- source map explorer not working - need to check
+- skeleton loading
+- css variables
+- add theme.scss in angular.json and add app specific styles and override in apps
+- api integration
