@@ -97,7 +97,6 @@ export default defineConfig([
       'no-duplicate-imports': 'error'
     }
   },
-
   // TypeScript configuration
   {
     files: ['**/*.{ts,mts,cts}'],
@@ -150,6 +149,11 @@ export default defineConfig([
       '@typescript-eslint/strict-boolean-expressions': 'error',
 
       // Style
+      '@typescript-eslint/sorted-imports': ['error', {
+        'ignoreCase': true,
+        'ignoreDeclarationSort': true,
+        'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']
+      }],
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/naming-convention': [
         'error',

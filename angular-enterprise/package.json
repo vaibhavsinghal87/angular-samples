@@ -22,7 +22,20 @@
     "core-ui:build": "ng build core-ui",
     "core-ui:lint": "ng lint core-ui",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
-    "cache:clean": "ng cache clean"
+    "cache:clean": "ng cache clean",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,scss,css}": [
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -53,6 +66,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-sonarjs": "^3.0.5",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.9.0",
     "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
@@ -60,6 +74,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^16.2.7",
     "ng-packagr": "^20.3.0",
     "ngx-build-plus": "^20.0.0",
     "prettier": "^3.6.2",
