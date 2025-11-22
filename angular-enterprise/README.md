@@ -119,3 +119,10 @@ For more information on using the Angular CLI, including detailed command refere
 
 - platform app.ts doesn;t have routes info, so unable to rediret to dashboard
 - error in console on refresh
+- explore import maps
+- lightweight injection token
+- bundle analysis
+- set basehref
+- extract optimizations
+- integrate AI
+- run in container setup in local
