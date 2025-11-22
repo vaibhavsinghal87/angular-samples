@@ -9,16 +9,20 @@
     "format": "prettier --write \"**/*.{js,ts,html,scss}\"",
     "enterprise-shell:start": "ng serve enterprise-shell",
     "enterprise-shell:build": "ng build enterprise-shell",
+    "enterprise-shell:build:analyse": "ng build enterprise-shell --source-map",
     "enterprise-shell:lint": "ng lint enterprise-shell",
     "digital-shell:start": "ng serve digital-shell",
     "digital-shell:build": "ng build digital-shell",
+    "digital-shell:build:analyse": "ng build digital-shell --source-map",
     "digital-shell:lint": "ng lint digital-shell",
     "platform-shell:start": "ng serve platform-shell",
     "platform-shell:build": "ng build platform-shell",
+    "platform-shell:build:analyse": "ng build platform-shell --source-map",
     "platform-shell:lint": "ng lint platform-shell",
     "core-ui:build": "ng build core-ui",
     "core-ui:lint": "ng lint core-ui",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
+    "cache:clean": "ng cache clean"
   },
   "private": true,
   "dependencies": {
@@ -59,6 +63,7 @@
     "ng-packagr": "^20.3.0",
     "ngx-build-plus": "^20.0.0",
     "prettier": "^3.6.2",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.46.1"
   }

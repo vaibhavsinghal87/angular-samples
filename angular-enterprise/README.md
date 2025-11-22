@@ -126,3 +126,5 @@ For more information on using the Angular CLI, including detailed command refere
 - extract optimizations
 - integrate AI
 - run in container setup in local
+- .angular/cache
+- httpinterceptor - xsrf
