@@ -1,14 +1,18 @@
 const {
-  shareAll,
+  share,
   withModuleFederationPlugin,
 } = require('@angular-architects/module-federation/webpack');
 
-module.exports = withModuleFederationPlugin({
+const sharedLibs = require('../../vendor-shared.config');
+
+const mfConfig = withModuleFederationPlugin({
   name: 'DigitalShell',
   exposes: {
     './DigitalApp': './digital/digital-shell/src/app/app.ts',
   },
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-  },
+  shared: share(sharedLibs),
 });
+
+module.exports = {
+ ...mfConfig
+};

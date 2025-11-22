@@ -12,6 +12,7 @@ const mfConfig = withModuleFederationPlugin({
 module.exports = {
   ...mfConfig,
   optimization: {
+    runtimeChunk: false,
     splitChunks: {
       cacheGroups: {
         angularCore: {
