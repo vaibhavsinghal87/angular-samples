@@ -33,7 +33,7 @@
                 "bundleName": "bootstrap"
               },
               {
-                "input": "dist/core-ui/scss/theme.scss",
+                "input": "dist/core-ui/styles/theme.scss",
                 "bundleName": "core-theme"
               },
               {
@@ -42,7 +42,7 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["dist/core-ui/scss"]
+              "includePaths": ["dist/core-ui/styles"]
             },
             "main": "enterprise/enterprise-shell/src/main.ts",
             "index": "enterprise\\enterprise-shell\\src\\index.html",

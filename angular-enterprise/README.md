@@ -150,3 +150,8 @@ For more information on using the Angular CLI, including detailed command refere
 - docker setup in local with different microapp running
 - platform/digital level core libs
 - bootstrap css include its component styles also? how those can be filtered
+- responsive utils
+- app-root conflict
+- import.meta error in console
+- fix eslint in project
+- generate lib.d.ts files for core library
