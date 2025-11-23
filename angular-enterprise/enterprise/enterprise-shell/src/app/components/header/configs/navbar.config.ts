@@ -1,4 +1,4 @@
-import { INavBarConfig } from '@core-ui';
+import { INavBarConfig } from '@core/lib';
 
 export const navbarConfig: INavBarConfig = {
   menu: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Navbar } from '@core-ui';
+import { Navbar } from '@core/lib';
 import { navbarConfig } from './configs/navbar.config';
 
 @Component({

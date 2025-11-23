@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@core-ui": [
+      "@core/lib": [
         "./dist/core-ui"
       ]
     },
