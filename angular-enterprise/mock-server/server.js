@@ -5,9 +5,11 @@ const middlewares = jsonServer.defaults();
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
+const API_BASE = '/api/v1/';
+
 // Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-  res.jsonp(req.query);
+server.get(`${API_BASE}/config`, (req, res) => {
+  res.jsonp(require('./jsons/configurations.json'));
 });
 
 // To handle POST, PUT and PATCH you need to use a body-parser

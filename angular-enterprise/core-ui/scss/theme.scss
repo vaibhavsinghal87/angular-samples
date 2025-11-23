@@ -1,14 +1,1 @@
-@use '@angular/material' as mat;
-
-html {
-  color-scheme: light dark;
-  @include mat.theme((
-    color: mat.$violet-palette,
-    typography: Roboto,
-    density: 0
-  ));
-}
-
-h1 {
-    color: aqua !important;
-}
+@use "material.theme";
