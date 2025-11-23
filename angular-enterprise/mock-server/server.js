@@ -5,10 +5,10 @@ const middlewares = jsonServer.defaults();
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
-const API_BASE = '/api/v1/';
+const API_BASE = '/api/v1';
 
 // Add custom routes before JSON Server router
-server.get(`${API_BASE}/config`, (req, res) => {
+server.post(`${API_BASE}/platform/config`, (req, res) => {
   res.jsonp(require('./jsons/configurations.json'));
 });
 
