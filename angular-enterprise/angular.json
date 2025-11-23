@@ -28,12 +28,21 @@
               }
             ],
             "styles": [
-              "enterprise/enterprise-shell/src/styles.scss"
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "bundleName": "bootstrap"
+              },
+              {
+                "input": "dist/core-ui/scss/theme.scss",
+                "bundleName": "core-theme"
+              },
+              {
+                "input": "enterprise/enterprise-shell/src/styles.scss",
+                "bundleName": "enterprise-shell-styles"
+              }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "dist/core-ui/scss"
-              ]
+              "includePaths": ["dist/core-ui/scss"]
             },
             "main": "enterprise/enterprise-shell/src/main.ts",
             "index": "enterprise\\enterprise-shell\\src\\index.html",

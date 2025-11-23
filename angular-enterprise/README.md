@@ -139,3 +139,14 @@ For more information on using the Angular CLI, including detailed command refere
 - css variables
 - add theme.scss in angular.json and add app specific styles and override in apps
 - api integration
+- send initialization data to angular library using injection tokens
+- integrate analytics service
+- integrate local CMS solution
+- create a CMS driven website. Explore different CMS
+- include bootstrap in project
+- include font-face.scss and styles
+- dynamic inject script for usage at runtime
+- sharedMappings in webpack config for sharing project libraries
+- docker setup in local with different microapp running
+- platform/digital level core libs
+- bootstrap css include its component styles also? how those can be filtered
