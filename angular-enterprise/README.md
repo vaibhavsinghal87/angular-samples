@@ -155,3 +155,35 @@ For more information on using the Angular CLI, including detailed command refere
 - import.meta error in console
 - fix eslint in project
 - generate lib.d.ts files for core library
+- check how different microfrontends can be deployed
+- inactivity timer
+- explore hacker rank projects
+- notes app
+- social media platform app
+- ecommerce app
+- access public apis - like pokemon, github and create apps
+- blogging apps
+- online learning platform
+- restraunt finder
+- real world application
+
+
+## Inventory Management system
+- finalize design
+- full blown platform with analytics
+- browse different inventory platforms and explore features
+- inventory management system - live feeds, integrate AI in inventory management system, charts, grids
+- check how different microfrontends can be deployed
+- chatting
+- salesforce cases
+- employee/customer
+- grievance redressal system
+- content management
+- database deployment
+- cloud DBs
+- MongoDB
+- Automation
+- search in inventory
+- subscription module/real time updates
+- caching
+- download reports
