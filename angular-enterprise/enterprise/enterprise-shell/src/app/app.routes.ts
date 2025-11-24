@@ -4,7 +4,16 @@ import { ROUTER_CONSTANTS } from '@core/lib';
 
 export const routes: Routes = [
   {
-    path: ROUTER_CONSTANTS.digital,
+    path: `${ROUTER_CONSTANTS.digital}`,
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: '/digital/remoteEntry.js',
+        exposedModule: './routes',
+      }).then(m => m.DIGITAL_ROUTES),
+  },
+  {
+    path: `${ROUTER_CONSTANTS.digital}`,
     loadComponent: () =>
       loadRemoteModule({
         type: 'module',
@@ -13,17 +22,27 @@ export const routes: Routes = [
       }).then(m => m.App),
   },
   {
-    path: ROUTER_CONSTANTS.platform,
-    loadComponent: () =>
+    path: `${ROUTER_CONSTANTS.platform}`,
+    loadChildren: () =>
       loadRemoteModule({
         type: 'module',
         remoteEntry: '/platform/remoteEntry.js',
-        exposedModule: './PlatformApp',
-      }).then(m => m.App),
+        exposedModule: './routes',
+      }).then(m => m.PLATFORM_ROUTES),
   },
+  // {
+  //   path: ROUTER_CONSTANTS.platform,
+  //   loadComponent: () =>
+  //     loadRemoteModule({
+  //       type: 'module',
+  //       remoteEntry: '/platform/remoteEntry.js',
+  //       exposedModule: './PlatformApp',
+  //     }).then(m => m.App),
+  // },
   {
-    path: ROUTER_CONSTANTS.admin,
-    loadComponent: () => import('./modules/admin/admin').then(m => m.Admin),
+    path: `${ROUTER_CONSTANTS.admin}`,
+    loadComponent: () =>
+      import('./modules/admin/admin').then(m => m.Admin),
   },
-  { path: '**', redirectTo: ROUTER_CONSTANTS.digital },
+  { path: '**', redirectTo: `${ROUTER_CONSTANTS.digital}` },
 ];

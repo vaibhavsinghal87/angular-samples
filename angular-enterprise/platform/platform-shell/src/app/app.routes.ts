@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 import { ROUTER_CONSTANTS } from '@core/lib';
 
-export const routes: Routes = [
+export const PLATFORM_ROUTES: Routes = [
   {
-    path: `/${ROUTER_CONSTANTS.platform}/${ROUTER_CONSTANTS.dashboard}`,
+    path: `${ROUTER_CONSTANTS.dashboard}`,
     loadComponent: () => import('../components/dashboard/dashboard').then(m => m.Dashboard),
   },
   {
     path: '**',
-    redirectTo: `/${ROUTER_CONSTANTS.platform}/${ROUTER_CONSTANTS.dashboard}`,
+    redirectTo: `${ROUTER_CONSTANTS.dashboard}`,
   },
 ];

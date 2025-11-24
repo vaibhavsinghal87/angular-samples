@@ -10,6 +10,8 @@ const mfConfig = withModuleFederationPlugin({
   exposes: {
     './PlatformApp':
       './platform/platform-shell/src/app/app.ts',
+    './routes':
+      './platform/platform-shell/src/app/app.routes.ts',
   },
   shared: share(sharedLibs),
 });

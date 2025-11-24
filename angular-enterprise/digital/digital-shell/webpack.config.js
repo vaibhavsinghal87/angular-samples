@@ -10,6 +10,8 @@ const mfConfig = withModuleFederationPlugin({
   exposes: {
     './DigitalApp':
       './digital/digital-shell/src/app/app.ts',
+    './routes':
+      './digital/digital-shell/src/app/app.routes.ts',
   },
   shared: share(sharedLibs),
 });
