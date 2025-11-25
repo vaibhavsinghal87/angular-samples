@@ -1,0 +1,7 @@
+<button mat-raised-button color="primary" (click)="onLoadComponent()">Load Component</button>
+
+@defer (when showContent) {
+  <app-card />
+} @placeholder {
+  <div class="loader"></div>
+}
