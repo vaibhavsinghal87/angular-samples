@@ -187,3 +187,18 @@ For more information on using the Angular CLI, including detailed command refere
 - subscription module/real time updates
 - caching
 - download reports
+- upload/download excel to add/delete products, product management
+- add/delete/update product
+- how to create db schema for same
+- use postgres SQL for same, integrate with copilot
+- graphQL integration
+- different BE integrations
+- inventory related projects can be part of enterprise project. search more projects like that
+- demand forecasting
+- warehouse
+- auditing
+- supplier/vendor management
+- Data and reporting
+- barcode scanning
+- real-time dashboards
+- AI forecasting
