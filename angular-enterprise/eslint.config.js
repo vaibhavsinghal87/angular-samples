@@ -90,12 +90,6 @@ module.exports = defineConfig([
     ],
     rules: {
       ...angularTemplate.configs.recommended.rules,
-      '@angular-eslint/template/attributes-order': [
-        'warn',
-        {
-          alphabetical: true,
-        },
-      ],
       '@angular-eslint/template/banana-in-box': ['error'],
       '@angular-eslint/template/button-has-type': ['error'],
       '@angular-eslint/template/click-events-have-key-events':
