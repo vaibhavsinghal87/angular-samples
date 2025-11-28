@@ -1,16 +1,16 @@
-import { INavBarConfig } from '@core/lib';
+import { INavBarConfig, ROUTER_CONSTANTS } from '@core/lib';
 
 export const navbarConfig: INavBarConfig = {
   menu: [
     {
       id: '1',
       label: 'Digital App',
-      url: '/digital',
+      url: ROUTER_CONSTANTS.digital,
     },
     {
       id: '2',
       label: 'Platform App',
-      url: '/platform',
+      url: ROUTER_CONSTANTS.platform,
     },
   ],
 };
