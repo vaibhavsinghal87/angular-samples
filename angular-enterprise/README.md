@@ -202,3 +202,14 @@ For more information on using the Angular CLI, including detailed command refere
 - barcode scanning
 - real-time dashboards
 - AI forecasting
+- https://github.com/AsjadIqbal/InventoryManagementSystem
+- https://opus.govst.edu/cgi/viewcontent.cgi?article=1156&context=capstones
+
+Features -
+https://github.com/MustafaAjnawala/Smart-Inventory-Management-System?tab=readme-ov-file
+https://careeco-inventory-management-system-x0ri.onrender.com/returns
+Product Management: Effortlessly add, edit, and track your entire inventory.
+🛒 Purchase Tracking: Keep a close eye on incoming stock and manage purchases with ease.
+🧾 Billing & Invoicing: Generate and manage customer invoices seamlessly.
+↩️ Returns Management: Handle product returns with an efficient and clear process.
+🗓️ Expiry Date Notifications: Stay ahead with timely alerts for expiring products.
