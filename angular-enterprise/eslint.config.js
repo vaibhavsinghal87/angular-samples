@@ -73,6 +73,7 @@ module.exports = defineConfig([
           style: 'kebab-case',
         },
       ],
+      '@angular-eslint/use-lifecycle-interface': ['error'],
     },
   },
   {

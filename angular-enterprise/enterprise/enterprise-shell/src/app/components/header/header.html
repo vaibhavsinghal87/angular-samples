@@ -1,5 +1,40 @@
-<div class="header-container">
-  <div class="navbar">
-    <lib-navbar [config]="navConfig"></lib-navbar>
+<header class="header-wrapper">
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      aria-label="Menu icon"
+      type="button"
+      (click)="attachOverlay()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Angular Enterprise</h1>
+  </mat-toolbar>
+  <mat-sidenav-container autosize="true">
+    <mat-sidenav
+      [ngClass]="!isCollapsed ? 'expanded' : ''"
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="isMobile ? 'false' : 'true'"
+    >
+      <mat-nav-list>
+        <a mat-list-item>
+          <span class="entry">
+            <mat-icon>house</mat-icon>
+            @if(!isCollapsed) {
+            <span>Dashboard</span>
+            }
+          </span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <h2>Content</h2>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <div class="header-container">
+    <div class="navbar">
+      <lib-navbar [config]="navConfig"></lib-navbar>
+    </div>
   </div>
-</div>
+</header>

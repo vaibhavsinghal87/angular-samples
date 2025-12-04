@@ -166,6 +166,12 @@ For more information on using the Angular CLI, including detailed command refere
 - online learning platform
 - restraunt finder
 - real world application
+- TS file eslint rules
+- variables for spacer, font size n all,
+- kill subscriptions
+- mobile view mixins for full screen overlay
+- overlay service
+- material components not rendering Roboto font
 
 
 ## Inventory Management system
