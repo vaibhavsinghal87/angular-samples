@@ -1,36 +1,24 @@
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { NgClass } from '@angular/common';
 import {
   Component,
   inject,
   OnDestroy,
-  ViewChild,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatNavList } from '@angular/material/list';
-import {
-  MatSidenav,
-  MatSidenavModule,
-} from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { Navbar } from '@core/lib';
-import { NavigationComponent } from '../navigation/navigation.component';
-import { navbarConfig } from './configs/navbar.config';
 import { HamburgerMenu } from '../hamburger-menu/hamburger-menu';
+import { navbarConfig } from './configs/navbar.config';
 @Component({
   selector: 'app-header',
   imports: [
     Navbar,
-    MatIconModule,
-    MatSidenavModule,
     MatToolbarModule,
+    MatIconModule,
     MatButtonModule,
-    MatNavList,
-    MatSidenav,
-    NavigationComponent,
-    NgClass,
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
@@ -40,10 +28,6 @@ export class Header implements OnDestroy {
 
   overlay!: Overlay;
   overlayRef: OverlayRef | null = null;
-
-  @ViewChild(MatSidenav) sidenav!: MatSidenav;
-  isMobile = true;
-  isCollapsed = true;
 
   constructor() {
     this.initOverlay();
@@ -58,6 +42,13 @@ export class Header implements OnDestroy {
     this.overlayRef.backdropClick().subscribe(() => {
       this.detachOverlay();
     });
+    this.overlayRef
+      .keydownEvents()
+      .subscribe((e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          this.detachOverlay();
+        }
+      });
   }
 
   /**
@@ -77,21 +68,6 @@ export class Header implements OnDestroy {
   detachOverlay(): void {
     if (this.overlayRef && this.overlayRef.hasAttached()) {
       this.overlayRef.detach();
-    }
-  }
-
-  /**
-   * Toggles the side navigation menu based on the device type.
-   * On mobile devices, it toggles the sidenav and ensures it's not collapsed.
-   * On larger screens, it opens the sidenav and toggles the collapsed state.
-   */
-  toggleMenu(): void {
-    if (this.isMobile) {
-      this.sidenav.toggle();
-      this.isCollapsed = false;
-    } else {
-      this.sidenav.open();
-      this.isCollapsed = !this.isCollapsed;
     }
   }
 
