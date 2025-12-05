@@ -2,9 +2,12 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import {
   Component,
+  ComponentRef,
+  DestroyRef,
   inject,
   OnDestroy,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,6 +27,8 @@ import { navbarConfig } from './configs/navbar.config';
   styleUrl: './header.scss',
 })
 export class Header implements OnDestroy {
+  private destroyRef = inject(DestroyRef);
+
   navConfig = navbarConfig;
 
   overlay!: Overlay;
@@ -39,11 +44,15 @@ export class Header implements OnDestroy {
       hasBackdrop: true,
       backdropClass: 'cdk-overlay-dark-backdrop',
     });
-    this.overlayRef.backdropClick().subscribe(() => {
-      this.detachOverlay();
-    });
+    this.overlayRef
+      .backdropClick()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.detachOverlay();
+      });
     this.overlayRef
       .keydownEvents()
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
           this.detachOverlay();
@@ -56,9 +65,13 @@ export class Header implements OnDestroy {
    */
   attachOverlay(): void {
     if (this.overlayRef && !this.overlayRef.hasAttached()) {
-      const componentPortal: ComponentPortal<HamburgerMenu> =
-        new ComponentPortal(HamburgerMenu);
-      this.overlayRef.attach(componentPortal);
+      const componentPortal =
+        new ComponentPortal<HamburgerMenu>(HamburgerMenu);
+      const componentRef: ComponentRef<HamburgerMenu> =
+        this.overlayRef.attach(componentPortal);
+      // Pass the overlayRef to the HamburgerMenu component
+      componentRef.instance.overlayRef = this.overlayRef;
+      // componentRef.setInput('overlayRef', this.overlayRef);
     }
   }
 

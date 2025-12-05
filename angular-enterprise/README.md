@@ -176,6 +176,9 @@ For more information on using the Angular CLI, including detailed command refere
 - nav list
 - font not applied to material components
 - material components not rendering Roboto font
+- add eslint rules for TS files
+- integrate pre commit hook
+- kill subscriptions
 
 ## Inventory Management system
 
