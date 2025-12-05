@@ -1,1 +1,3 @@
-@use "material.theme";
+@use 'themes/mat.theme' as *;
+@use 'mixins' as *;
+@use 'typography' as *;

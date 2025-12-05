@@ -170,11 +170,15 @@ For more information on using the Angular CLI, including detailed command refere
 - variables for spacer, font size n all,
 - kill subscriptions
 - mobile view mixins for full screen overlay
-- overlay service
+- create reusable overlay service
+- export font face/font icon
+- use custom font icon from project
+- nav list
+- font not applied to material components
 - material components not rendering Roboto font
 
-
 ## Inventory Management system
+
 - finalize design
 - full blown platform with analytics
 - browse different inventory platforms and explore features

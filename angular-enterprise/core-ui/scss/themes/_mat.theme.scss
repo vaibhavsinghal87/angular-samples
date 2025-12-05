@@ -10,8 +10,8 @@ html {
   @include mat.theme((
     color: mat.$violet-palette,
     typography: (
-      plain-family: Roboto,
-      brand-family: Open Sans,
+      plain-family: Roboto sans-serif,
+      brand-family: Open Sans sans-serif,
     ),
     density: 0
   ));

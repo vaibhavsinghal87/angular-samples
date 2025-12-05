@@ -1,0 +1,254 @@
+// ========================================
+// Font Size Variables (1-10)
+// ========================================
+
+// Base font size (typically 16px or 1rem)
+$fs-base: 1rem;
+$fs-base-px: 16px;
+
+// ========================================
+// Font Size Scale (1-10)
+// ========================================
+
+// Font Size 1 - Extra Small (10px / 0.625rem)
+$fs-1: 0.625rem;
+$fs-1-px: 10px;
+
+// Font Size 2 - Very Small (12px / 0.75rem)
+$fs-2: 0.75rem;
+$fs-2-px: 12px;
+
+// Font Size 3 - Small (14px / 0.875rem)
+$fs-3: 0.875rem;
+$fs-3-px: 14px;
+
+// Font Size 4 - Small-Medium (16px / 1rem)
+$fs-4: 1rem;
+$fs-4-px: 16px;
+
+// Font Size 5 - Medium (18px / 1.125rem)
+$fs-5: 1.125rem;
+$fs-5-px: 18px;
+
+// Font Size 6 - Medium-Large (20px / 1.25rem)
+$fs-6: 1.25rem;
+$fs-6-px: 20px;
+
+// Font Size 7 - Large (24px / 1.5rem)
+$fs-7: 1.5rem;
+$fs-7-px: 24px;
+
+// Font Size 8 - X-Large (28px / 1.75rem)
+$fs-8: 1.75rem;
+$fs-8-px: 28px;
+
+// Font Size 9 - XX-Large (32px / 2rem)
+$fs-9: 2rem;
+$fs-9-px: 32px;
+
+// Font Size 10 - Extra XX-Large (36px / 2.25rem)
+$fs-10: 2.25rem;
+$fs-10-px: 36px;
+
+// ========================================
+// Semantic Font Size Variables
+// ========================================
+
+// Text Sizes
+$text-xs: $fs-1;
+$text-sm: $fs-2;
+$text-base: $fs-4;
+$text-md: $fs-5;
+$text-lg: $fs-6;
+$text-xl: $fs-7;
+
+// Heading Sizes
+$heading-6: $fs-3;
+$heading-5: $fs-5;
+$heading-4: $fs-6;
+$heading-3: $fs-7;
+$heading-2: $fs-8;
+$heading-1: $fs-9;
+
+// Display Sizes (for large headlines)
+$display-1: $fs-10;
+$display-2: $fs-9;
+$display-3: $fs-8;
+
+// Code/Monospace Sizes
+$code-sm: $fs-2;
+$code-md: $fs-3;
+$code-lg: $fs-5;
+
+// ========================================
+// Font Size Map (for loops/mixins)
+// ========================================
+
+$fss: (
+  '1': $fs-1,
+  '2': $fs-2,
+  '3': $fs-3,
+  '4': $fs-4,
+  '5': $fs-5,
+  '6': $fs-6,
+  '7': $fs-7,
+  '8': $fs-8,
+  '9': $fs-9,
+  '10': $fs-10,
+  'xs': $text-xs,
+  'sm': $text-sm,
+  'base': $text-base,
+  'md': $text-md,
+  'lg': $text-lg,
+  'xl': $text-xl,
+) !default;
+
+// ========================================
+// Line Height Variables
+// ========================================
+
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+$line-height-loose: 2;
+
+// Map for line heights
+$line-heights: (
+  'tight': $line-height-tight,
+  'normal': $line-height-normal,
+  'relaxed': $line-height-relaxed,
+  'loose': $line-height-loose,
+) !default;
+
+// ========================================
+// Letter Spacing Variables
+// ========================================
+
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0em;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
+
+$letter-spacings: (
+  'tighter': $letter-spacing-tighter,
+  'tight': $letter-spacing-tight,
+  'normal': $letter-spacing-normal,
+  'wide': $letter-spacing-wide,
+  'wider': $letter-spacing-wider,
+  'widest': $letter-spacing-widest,
+) !default;
+
+// ========================================
+// Font Weight Variables
+// ========================================
+
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+$font-weights: (
+  'thin': $font-weight-thin,
+  'extralight': $font-weight-extralight,
+  'light': $font-weight-light,
+  'normal': $font-weight-normal,
+  'medium': $font-weight-medium,
+  'semibold': $font-weight-semibold,
+  'bold': $font-weight-bold,
+  'extrabold': $font-weight-extrabold,
+  'black': $font-weight-black,
+) !default;
+
+// ========================================
+// Typography Utility Functions
+// ========================================
+
+/// Get font size from map
+/// @param {String} $size - Font size key
+/// @return {Number} Font size value
+@function get-font-size($size) {
+  @if map-has-key($fss, $size) {
+    @return map-get($fss, $size);
+  } @else {
+    @warn "Font size `#{$size}` not found in $fss.";
+    @return $fs-base;
+  }
+}
+
+/// Get line height from map
+/// @param {String} $height - Line height key
+/// @return {Number} Line height value
+@function get-line-height($height) {
+  @if map-has-key($line-heights, $height) {
+    @return map-get($line-heights, $height);
+  } @else {
+    @warn "Line height `#{$height}` not found in $line-heights.";
+    @return $line-height-normal;
+  }
+}
+
+/// Get font weight from map
+/// @param {String} $weight - Font weight key
+/// @return {Number} Font weight value
+@function get-font-weight($weight) {
+  @if map-has-key($font-weights, $weight) {
+    @return map-get($font-weights, $weight);
+  } @else {
+    @warn "Font weight `#{$weight}` not found in $font-weights.";
+    @return $font-weight-normal;
+  }
+}
+
+// ========================================
+// Typography Mixins
+// ========================================
+
+/// Mixin for quick typography styling
+/// @param {Number} $size - Font size
+/// @param {Number} $weight - Font weight (optional)
+/// @param {Number} $height - Line height (optional)
+/// @example
+///   h1 {
+///     @include typography($heading-1, $font-weight-bold, $line-height-tight);
+///   }
+@mixin typography(
+  $size,
+  $weight: $font-weight-normal,
+  $height: $line-height-normal
+) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+/// Mixin for text truncation
+/// @example
+///   .ellipsis {
+///     @include text-truncate;
+///   }
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Mixin for multi-line text truncation
+/// @param {Number} $lines - Number of lines to show
+/// @example
+///   .clamp-text {
+///     @include text-clamp(2);
+///   }
+@mixin text-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

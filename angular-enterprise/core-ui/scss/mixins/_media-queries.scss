@@ -1,0 +1,299 @@
+// ========================================
+// Media Query Breakpoint Mixins
+// ========================================
+
+// Define breakpoints
+$breakpoints: (
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  '2xl': 1400px,
+) !default;
+
+// ========================================
+// Mobile First Approach Mixins
+// ========================================
+
+/// Media query mixin for mobile-first approach
+/// @param {String} $breakpoint - Breakpoint name (xs, sm, md, lg, xl, 2xl)
+/// @example
+///   .container {
+///     width: 100%;
+///     @include media-up(md) {
+///       width: 50%;
+///     }
+///   }
+@mixin media-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$breakpoint}` not found in $breakpoints.";
+  }
+}
+
+/// Media query mixin for desktop-first approach (down)
+/// @param {String} $breakpoint - Breakpoint name (xs, sm, md, lg, xl, 2xl)
+/// @example
+///   .container {
+///     width: 100%;
+///     @include media-down(md) {
+///       width: 100%;
+///     }
+///   }
+@mixin media-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    $max-width: $breakpoint-value - 1px;
+    @media (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$breakpoint}` not found in $breakpoints.";
+  }
+}
+
+/// Media query mixin for between two breakpoints
+/// @param {String} $breakpoint-min - Minimum breakpoint name
+/// @param {String} $breakpoint-max - Maximum breakpoint name
+/// @example
+///   .container {
+///     @include media-between(md, lg) {
+///       width: 75%;
+///     }
+///   }
+@mixin media-between($breakpoint-min, $breakpoint-max) {
+  @if map-has-key($breakpoints, $breakpoint-min) and
+    map-has-key($breakpoints, $breakpoint-max) {
+    $min-value: map-get($breakpoints, $breakpoint-min);
+    $max-value: map-get($breakpoints, $breakpoint-max) - 1px;
+    @media (min-width: $min-value) and (max-width: $max-value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint not found in $breakpoints.";
+  }
+}
+
+// ========================================
+// Specific Breakpoint Mixins (Shortcuts)
+// ========================================
+
+/// Extra small devices (phones, less than 576px)
+@mixin mobile {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+/// Small devices (landscape phones, 576px and up)
+@mixin sm-up {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+/// Medium devices (tablets, 768px and up)
+@mixin md-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+/// Large devices (desktops, 992px and up)
+@mixin lg-up {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+/// Extra large devices (large desktops, 1200px and up)
+@mixin xl-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+/// 2XL devices (4K monitors, 1400px and up)
+@mixin xxl-up {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// Down mixins
+/// Small devices and down (576px and below)
+@mixin sm-down {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+/// Medium devices and down (768px and below)
+@mixin md-down {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+/// Large devices and down (992px and below)
+@mixin lg-down {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+
+/// Extra large devices and down (1200px and below)
+@mixin xl-down {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+/// 2XL devices and down (1400px and below)
+@mixin xxl-down {
+  @media (max-width: 1399.98px) {
+    @content;
+  }
+}
+
+// ========================================
+// Orientation Mixins
+// ========================================
+
+/// Portrait orientation
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+/// Landscape orientation
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+// ========================================
+// Device-Specific Mixins
+// ========================================
+
+/// Retina/High DPI displays (2x and higher)
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+/// High contrast mode
+@mixin high-contrast {
+  @media (prefers-contrast: more) {
+    @content;
+  }
+}
+
+/// Reduced motion preference
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+/// Dark mode preference
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+/// Light mode preference
+@mixin light-mode {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
+
+// ========================================
+// Touch Device Mixins
+// ========================================
+
+/// Touch devices (hover not supported)
+@mixin touch-device {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+/// Devices with hover support
+@mixin hover-device {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+// ========================================
+// Custom Range Mixin
+// ========================================
+
+/// Custom pixel range media query
+/// @param {Number} $min-width - Minimum width in pixels
+/// @param {Number} $max-width - Maximum width in pixels (optional)
+/// @example
+///   .container {
+///     @include media-range(600px, 800px) {
+///       width: 50%;
+///     }
+///   }
+@mixin media-range($min-width, $max-width: null) {
+  @if $max-width {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+}
+
+// ========================================
+// Aspect Ratio Mixin
+// ========================================
+
+/// Aspect ratio media query
+/// @param {Number} $width - Width ratio
+/// @param {Number} $height - Height ratio
+/// @example
+///   .video {
+///     @include aspect-ratio(16, 9) {
+///       padding-top: calc(9/16 * 100%);
+///     }
+///   }
+@mixin aspect-ratio($width, $height) {
+  @media (aspect-ratio: $width / $height) {
+    @content;
+  }
+}
+
+// ========================================
+// Print Media Mixin
+// ========================================
+
+/// Print styles
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+/// Screen styles (hide in print)
+@mixin screen-only {
+  @media screen {
+    @content;
+  }
+}

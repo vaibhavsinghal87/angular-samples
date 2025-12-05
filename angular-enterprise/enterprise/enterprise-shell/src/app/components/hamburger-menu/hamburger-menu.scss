@@ -1,6 +1,12 @@
+@use 'mixins' as *;
+
 .hamburger-menu-wrapper {
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    background-color: white;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+
+  @include sm-down {
+    width: 100%;
+  }
 }
