@@ -57,6 +57,18 @@ module.exports = defineConfig([
       '@typescript-eslint/adjacent-overload-signatures':
         'error',
       '@typescript-eslint/no-inferrable-type': 'off',
+      '@typescript-eslint/array-type': 'error',
+      '@typescript-eslint/explicit-function-return-type':
+        'error',
+      '@typescript-eslint/member-ordering': 'error',
+      '@typescript-eslint/no-deprecated': 'error',
+      '@typescript-eslint/no-for-in-array': 'error',
+      '@typescript-eslint/prefer-for-of': 'error',
+      '@typescript-eslint/prefer-nullish-coalescing':
+        'error',
+      '@typescript-eslint/prefer-optional-chain': 'error',
+      '@typescript-eslint/related-getter-setter-pairs':
+        'error',
       '@angular-eslint/directive-selector': [
         'error',
         {
@@ -74,6 +86,33 @@ module.exports = defineConfig([
         },
       ],
       '@angular-eslint/use-lifecycle-interface': ['error'],
+      '@angular-eslint/contextual-decorator': ['error'],
+      '@angular-eslint/contextual-lifecycle': ['error'],
+      '@angular-eslint/no-async-lifecycle-method': [
+        'error',
+      ],
+      '@angular-eslint/no-developer-preview': ['error'],
+      '@angular-eslint/no-duplicates-in-metadata-arrays': [
+        'error',
+      ],
+      '@angular-eslint/no-empty-lifecycle-method': [
+        'error',
+      ],
+      '@angular-eslint/no-experimental': ['error'],
+      '@angular-eslint/no-forward-ref': ['error'],
+      '@angular-eslint/no-lifecycle-call': ['error'],
+      '@angular-eslint/no-pipe-impure': ['error'],
+      '@angular-eslint/no-uncalled-signals': ['error'],
+      '@angular-eslint/prefer-inject': ['error'],
+      '@angular-eslint/prefer-standalone': ['error'],
+      '@angular-eslint/relative-url-prefix': ['error'],
+      '@angular-eslint/sort-lifecycle-methods': ['error'],
+      '@angular-eslint/use-component-view-encapsulation': [
+        'error',
+      ],
+      '@angular-eslint/use-injectable-provided-in': [
+        'error',
+      ],
     },
   },
   {
