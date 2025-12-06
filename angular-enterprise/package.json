@@ -25,6 +25,11 @@
     "cache:clean": "ng cache clean",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged -d"
+    }
+  },
   "lint-staged": {
     "*.{js,ts}": [
       "eslint --fix",
