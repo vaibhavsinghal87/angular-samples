@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'variables' as *;
 
 .hamburger-menu-wrapper {
   display: flex;
@@ -12,9 +13,16 @@
   @include sm-down {
     width: 100%;
   }
+}
 
-  .hamburger-header {
-    display: flex;
-    justify-content: flex-end;
+.hamburger-header {
+  display: flex;
+  justify-content: flex-end;
+
+  .close-btn {
+    &:focus {
+      border: 2px solid $pure-black;
+      border-radius: 4px;
+    }
   }
 }
