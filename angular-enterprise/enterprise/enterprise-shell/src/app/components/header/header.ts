@@ -71,6 +71,7 @@ export class Header implements OnDestroy {
         this.overlayRef.attach(componentPortal);
       // Pass the overlayRef to the HamburgerMenu component
       componentRef.instance.overlayRef = this.overlayRef;
+      componentRef.instance.navConfig = this.navConfig;
       // componentRef.setInput('overlayRef', this.overlayRef);
     }
   }

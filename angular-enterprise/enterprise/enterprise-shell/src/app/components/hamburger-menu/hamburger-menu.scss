@@ -1,12 +1,20 @@
 @use 'mixins' as *;
 
 .hamburger-menu-wrapper {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   width: 250px;
   height: 100vh;
   background-color: white;
+  @include padding(1rem, 1rem, 1rem, 1rem);
 
   @include sm-down {
     width: 100%;
+  }
+
+  .hamburger-header {
+    display: flex;
+    justify-content: flex-end;
   }
 }
