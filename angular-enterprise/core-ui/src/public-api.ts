@@ -3,8 +3,8 @@
  */
 
 // components
-export {Navbar} from './lib/components/atoms/navbar/navbar';
-export {ChartComponent} from './lib/components/molecules/chart/chart';
+export { Navbar } from './lib/components/atoms/navbar/navbar';
+export { ChartComponent } from './lib/components/molecules/chart/base-chart/chart';
 
 // interfaces
 export * from './lib/interfaces';

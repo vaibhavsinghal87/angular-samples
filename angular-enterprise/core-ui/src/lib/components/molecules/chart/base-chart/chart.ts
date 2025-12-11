@@ -2,12 +2,20 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Inject,
+  Input,
   Optional,
+  Output,
   ViewChild,
 } from '@angular/core';
-import { Chart, ChartTypeRegistry } from 'chart.js';
-import { CHARTS_CONFIGURATION } from '../../../providers/chart.provider';
+import {
+  Chart,
+  ChartOptions,
+  ChartTypeRegistry,
+} from 'chart.js';
+import { CHARTS_CONFIGURATION } from '../../../../providers/chart.provider';
+import { defaultOptions } from '../config/chart.config';
 
 @Component({
   selector: 'lib-chart',
@@ -16,10 +24,15 @@ import { CHARTS_CONFIGURATION } from '../../../providers/chart.provider';
   styleUrl: './chart.css',
 })
 export class ChartComponent implements AfterViewInit {
+  @Input() chartType: keyof ChartTypeRegistry = 'bar';
+  @Input() chartData: any;
+  @Input() chartOptions: ChartOptions = {};
+
+  @Output() chartClick = new EventEmitter();
+
   @ViewChild('chartCanvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
   chartObj!: Chart;
-  chartType: keyof ChartTypeRegistry = 'bar';
 
   constructor(
     @Optional()
@@ -33,8 +46,19 @@ export class ChartComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.setChartOptions();
     // Chart initialization logic can be added here
     this.initializeChart();
+  }
+
+  /**
+   * Sets the chart options by merging default options with input options.
+   */
+  setChartOptions(): void {
+    this.chartOptions = {
+      ...defaultOptions,
+      ...this.chartOptions,
+    };
   }
 
   /**
@@ -48,9 +72,6 @@ export class ChartComponent implements AfterViewInit {
           'Red',
           'Blue',
           'Yellow',
-          'Green',
-          'Purple',
-          'Orange',
         ],
         datasets: [
           {
@@ -58,9 +79,19 @@ export class ChartComponent implements AfterViewInit {
             data: [12, 19, 3, 5, 2, 3],
             borderWidth: 1,
           },
+          {
+            label: '# of Votes1',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
+          {
+            label: '# of Votes2',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
         ],
       },
-      options: {},
+      options: { ...this.chartOptions },
     });
   }
 }

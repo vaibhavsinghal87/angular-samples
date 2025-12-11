@@ -180,6 +180,9 @@ For more information on using the Angular CLI, including detailed command refere
 - integrate pre commit hook
 - kill subscriptions
 - expose provider, injection token on core lib
+- chartjs separate bundle
+- update chart programatically using update function, data update on ngonchanges
+- api interfaces
 
 ## Inventory Management system
 
