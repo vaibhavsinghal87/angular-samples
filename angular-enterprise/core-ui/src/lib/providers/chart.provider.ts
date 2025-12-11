@@ -1,15 +1,16 @@
 import { InjectionToken } from '@angular/core';
 import { ChartComponentLike } from 'chart.js';
 
-export const CHARTS_CONFIGURATION = new InjectionToken<
-  ChartsConfiguration
->('CHARTS_CONFIGURATION');
+export const CHARTS_CONFIGURATION =
+  new InjectionToken<ChartConfiguration>(
+    'CHARTS_CONFIGURATION'
+  );
 
-export interface ChartsConfiguration {
-  registrables?: ChartComponentLike[];
+export interface ChartConfiguration {
+  registerables?: ChartComponentLike[];
 }
 
-export function provideCharts(config: ChartsConfiguration) {
+export function provideCharts(config: ChartConfiguration) {
   return {
     provide: CHARTS_CONFIGURATION,
     useValue: { ...config },

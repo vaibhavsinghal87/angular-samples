@@ -1,11 +1,15 @@
+import { ChartConfiguration } from '@core/lib';
 import {
   BarController,
   BarElement,
   CategoryScale,
+  Legend,
   LinearScale,
+  Title,
+  Tooltip,
 } from 'chart.js';
 
-export const chartConfig = {
+export const chartConfig: ChartConfiguration = {
   registerables: [
     // Controllers
     BarController,
@@ -14,5 +18,9 @@ export const chartConfig = {
     // Scales
     CategoryScale,
     LinearScale,
+    // Plugins
+    Legend,
+    Title,
+    Tooltip,
   ],
 };
