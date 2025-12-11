@@ -12,13 +12,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { Navbar } from '@core/lib';
 import { HamburgerMenu } from '../hamburger-menu/hamburger-menu';
 import { navbarConfig } from './configs/navbar.config';
 @Component({
   selector: 'app-header',
   imports: [
-    Navbar,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

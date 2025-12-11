@@ -11,3 +11,6 @@ export * from './lib/interfaces';
 
 // constants
 export * from './lib/constants';
+
+// providers
+export * from './lib/providers/chart.provider';

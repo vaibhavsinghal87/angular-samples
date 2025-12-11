@@ -12,15 +12,15 @@ export const routes: Routes = [
         exposedModule: './routes',
       }).then(m => m.DIGITAL_ROUTES),
   },
-  {
-    path: `${ROUTER_CONSTANTS.digital}`,
-    loadComponent: () =>
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: '/digital/remoteEntry.js',
-        exposedModule: './DigitalApp',
-      }).then(m => m.App),
-  },
+  // {
+  //   path: `${ROUTER_CONSTANTS.digital}`,
+  //   loadComponent: () =>
+  //     loadRemoteModule({
+  //       type: 'module',
+  //       remoteEntry: '/digital/remoteEntry.js',
+  //       exposedModule: './DigitalApp',
+  //     }).then(m => m.App),
+  // },
   {
     path: `${ROUTER_CONSTANTS.platform}`,
     loadChildren: () =>

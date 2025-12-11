@@ -179,6 +179,7 @@ For more information on using the Angular CLI, including detailed command refere
 - add eslint rules for TS files
 - integrate pre commit hook
 - kill subscriptions
+- expose provider, injection token on core lib
 
 ## Inventory Management system
 
