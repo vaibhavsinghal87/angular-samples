@@ -21,7 +21,7 @@ import { defaultOptions } from '../config/chart.config';
   selector: 'lib-chart',
   imports: [],
   templateUrl: './chart.html',
-  styleUrl: './chart.css',
+  styleUrl: './chart.scss',
 })
 export class ChartComponent implements AfterViewInit {
   @Input() chartType: keyof ChartTypeRegistry = 'bar';
@@ -67,30 +67,7 @@ export class ChartComponent implements AfterViewInit {
   initializeChart(): void {
     this.chartObj = new Chart(this.canvas.nativeElement, {
       type: this.chartType,
-      data: {
-        labels: [
-          'Red',
-          'Blue',
-          'Yellow',
-        ],
-        datasets: [
-          {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-          {
-            label: '# of Votes1',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-          {
-            label: '# of Votes2',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-        ],
-      },
+      data: this.chartData,
       options: { ...this.chartOptions },
     });
   }

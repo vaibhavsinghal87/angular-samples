@@ -4,8 +4,7 @@ export const defaultOptions: ChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   backgroundColor: '#ff0000',
-  borderColor: '#00ff00',
-  color: '#0000ff',
+  borderColor: '#000000',
   plugins: {
     legend: {
       title: {
@@ -17,7 +16,7 @@ export const defaultOptions: ChartOptions = {
       align: 'end' as const,
     },
     title: {
-      display: true,
+      display: false,
       text: 'Chart.js Bar Chart',
     },
     tooltip: {
@@ -29,23 +28,27 @@ export const defaultOptions: ChartOptions = {
       display: true,
       title: {
         display: true,
-        text: 'X Axis Title',
+        text: '',
       },
       grid: {
-        display: false,
-        drawOnChartArea: true,
+        display: true,
+        drawOnChartArea: false,
+        drawTicks: false,
       },
+      border: { display: true },
     },
     y: {
       display: true,
       title: {
         display: true,
-        text: 'Y Axis Title',
+        text: '',
       },
       grid: {
         display: true,
         drawOnChartArea: true,
+        drawTicks: false,
       },
+      border: { display: true },
     },
   },
 };
