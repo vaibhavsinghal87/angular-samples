@@ -1,6 +1,12 @@
 <div class="content">
   <h3 class="heading">Dashboard</h3>
+  @if (chartData) {
   <div class="chart-container">
-    <lib-chart [chartData]="data"></lib-chart>
+    <lib-chart
+      [chartData]="chartData"
+      [yAxisKey]="'count'"
+      [xAxisKey]="'name'"
+    />
   </div>
+  }
 </div>

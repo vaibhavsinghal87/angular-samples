@@ -182,6 +182,9 @@ module.exports = defineConfig([
       '@angular-eslint/template/prefer-template-literal': [
         'error',
       ],
+      '@angular-eslint/template/prefer-self-closing-tags': [
+        'error',
+      ],
     },
   },
 ]);

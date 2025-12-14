@@ -12,6 +12,10 @@ server.post(`${API_BASE}/platform/config`, (req, res) => {
   res.jsonp(require('./jsons/configurations.json'));
 });
 
+server.get(`${API_BASE}/digital/summary`, (req, res) => {
+  res.jsonp(require('./jsons/summary.json'));
+});
+
 // To handle POST, PUT and PATCH you need to use a body-parser
 server.use(jsonServer.bodyParser);
 

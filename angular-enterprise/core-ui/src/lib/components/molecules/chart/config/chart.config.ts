@@ -36,6 +36,12 @@ export const defaultOptions: ChartOptions = {
         drawTicks: false,
       },
       border: { display: true },
+      ticks: {
+        padding: 10,
+        maxRotation: 0,
+        minRotation: 0,
+        autoSkip: false,
+      },
     },
     y: {
       display: true,
@@ -49,6 +55,7 @@ export const defaultOptions: ChartOptions = {
         drawTicks: false,
       },
       border: { display: true },
+      ticks: { padding: 10, mirror: false },
     },
   },
 };

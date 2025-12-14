@@ -1,0 +1,15 @@
+{
+  "details": {
+    "items": [
+      { "name": "Electronics", "count": 120 },
+      { "name": "Fashion", "count": 95 },
+      { "name": "Home & Kitchen", "count": 80 },
+      { "name": "Sports", "count": 60 },
+      { "name": "Books", "count": 40 },
+      { "name": "Toys", "count": 55 },
+      { "name": "Groceries", "count": 150 }
+    ]
+  },
+  "success": true,
+  "errorDetails": {}
+}
