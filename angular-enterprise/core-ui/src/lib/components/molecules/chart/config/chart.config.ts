@@ -1,4 +1,5 @@
 import { ChartOptions } from 'chart.js';
+import { DATALABELS_PLUGIN_CONFIG } from '../plugins/datalabels/config';
 
 export const defaultOptions: ChartOptions = {
   responsive: true,
@@ -8,10 +9,10 @@ export const defaultOptions: ChartOptions = {
   plugins: {
     legend: {
       title: {
-        display: true,
-        text: 'Legend Title',
+        display: false,
+        text: '',
       },
-      display: true,
+      display: false,
       position: 'top' as const,
       align: 'end' as const,
     },
@@ -22,13 +23,13 @@ export const defaultOptions: ChartOptions = {
     tooltip: {
       enabled: true,
     },
+    datalabels: { ...DATALABELS_PLUGIN_CONFIG },
   },
   scales: {
     x: {
       display: true,
       title: {
         display: true,
-        text: '',
       },
       grid: {
         display: true,
@@ -47,7 +48,6 @@ export const defaultOptions: ChartOptions = {
       display: true,
       title: {
         display: true,
-        text: '',
       },
       grid: {
         display: true,
@@ -57,5 +57,8 @@ export const defaultOptions: ChartOptions = {
       border: { display: true },
       ticks: { padding: 10, mirror: false },
     },
+  },
+  elements: {
+    bar: {},
   },
 };

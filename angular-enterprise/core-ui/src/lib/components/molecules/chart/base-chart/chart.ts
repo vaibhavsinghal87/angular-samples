@@ -17,7 +17,11 @@ import {
   ChartTypeRegistry,
   registerables,
 } from 'chart.js';
-import { CHARTS_CONFIGURATION } from '../../../../providers/chart.provider';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import {
+  ChartConfiguration,
+  CHARTS_CONFIGURATION,
+} from '../../../../providers/chart.provider';
 import { defaultOptions } from '../config/chart.config';
 import { ChartUtility } from '../utils/chart.util';
 @Component({
@@ -45,8 +49,9 @@ export class ChartComponent
   constructor(
     @Optional()
     @Inject(CHARTS_CONFIGURATION)
-    config?: any
+    config?: ChartConfiguration
   ) {
+    // Components
     if (config?.registerables) {
       // register chart.js components if provided in configuration
       Chart.register(...config.registerables);
@@ -54,6 +59,8 @@ export class ChartComponent
       // register default registrables from Chartjs
       Chart.register(...registerables);
     }
+    // Plugins
+    Chart.register(ChartDataLabels);
   }
 
   ngOnInit(): void {

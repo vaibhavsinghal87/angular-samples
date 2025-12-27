@@ -13,6 +13,11 @@ export class ChartUtility {
     });
     const datasets = [
       {
+        barThickness: 7,
+        borderRadius: 5,
+        backgroundColor: '#007bff',
+        hoverBackgroundColor: '#0056b3',
+        hoverBorderColor: '#080808ff',
         data: yAxisValues,
       },
     ];
